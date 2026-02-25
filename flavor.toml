@@ -142,28 +142,57 @@ footer = { fg = "#100F0F", bg = "#E6E4D9", bold = true } # tx, ui
 
 [filetype]
 rules = [
-  # Images
-  { mime = "image/*", fg = "#5E409D" }, # pu
-
-  # Media
-  { mime = "video/*", fg = "#AD8301" }, # ye
-  { mime = "audio/*", fg = "#AD8301" }, # ye
-
-  # Broken symbolic link
-  { url = "*", is = "orphan", fg = "#B7B5AC", crossed = true }, # tx-3
-  { url = "*/", is = "orphan", fg = "#B7B5AC", crossed = true }, # tx-3
-
-  # Symbolic links
-  { url = "*", is = "link", fg = "#24837B" }, # cy
-  { url = "*/", is = "link", fg = "#24837B" }, # cy
-
-  # Executable
-  { url = "*", is = "exec", fg = "#66800B" }, # gr
-
   # Empty files
   { mime = "inode/empty", fg = "#B7B5AC" }, # tx-3
 
+  # Special files
+  { url = "*", is = "orphan", fg = "#B7B5AC" }, # tx-3
+  { url = "*/", is = "orphan", fg = "#B7B5AC" }, # tx-3
+  { url = "*", is = "link", fg = "#24837B" }, # cy
+  { url = "*/", is = "link", fg = "#24837B" }, # cy
+  { url = "*", is = "block", fg = "#100F0F" }, # tx
+  { url = "*", is = "char", fg = "#100F0F" }, # tx
+  { url = "*", is = "fifo", fg = "#A02F6F" }, # ma
+  { url = "*", is = "sock", fg = "#A02F6F" }, # ma
+  { url = "*", is = "sticky", fg = "#100F0F" }, # tx
+  { url = "*", is = "dummy", fg = "#B7B5AC" }, # tx-3
+
   # Fallback
-  { url = "*", fg = "#6F6E69" }, # tx-2
-  { url = "*/", fg = "#100F0F" } # tx
+  { url = "*/", fg = "#100F0F" }, # tx
+  { url = "*", is = "exec", fg = "#66800B" }, # gr
+  { url = "*", fg = "#6F6E69" } # tx-2
+]
+
+[icon]
+dirs = [
+  { name = ".config", text = "", fg = "#24837B" }, # cy
+  { name = ".git", text = "", fg = "#24837B" }, # cy
+  { name = ".github", text = "", fg = "#24837B" }, # cy
+  { name = ".npm", text = "", fg = "#24837B" }, # cy
+  { name = "Desktop", text = "", fg = "#24837B" }, # cy
+  { name = "Development", text = "", fg = "#24837B" }, # cy
+  { name = "Documents", text = "", fg = "#24837B" }, # cy
+  { name = "Downloads", text = "", fg = "#24837B" }, # cy
+  { name = "Library", text = "", fg = "#24837B" }, # cy
+  { name = "Movies", text = "", fg = "#24837B" }, # cy
+  { name = "Music", text = "", fg = "#24837B" }, # cy
+  { name = "Pictures", text = "", fg = "#24837B" }, # cy
+  { name = "Public", text = "", fg = "#24837B" }, # cy
+  { name = "Videos", text = "", fg = "#24837B" } # cy
+]
+conds = [
+  # Special files
+  { if = "orphan", text = "", fg = "#B7B5AC" }, # tx-3
+  { if = "link", text = "", fg = "#24837B" }, # cy
+  { if = "block", text = "", fg = "#100F0F" }, # tx
+  { if = "char", text = "", fg = "#100F0F" }, # tx
+  { if = "fifo", text = "", fg = "#A02F6F" }, # ma
+  { if = "sock", text = "", fg = "#A02F6F" }, # ma
+  { if = "sticky", text = "", fg = "#100F0F" }, # tx
+  { if = "dummy", text = "", fg = "#B7B5AC" }, # tx-3
+
+  # Fallback
+  { if = "dir", text = "", fg = "#24837B" }, # cy
+  { if = "exec", text = "", fg = "#66800B" }, # gr
+  { if = "!dir", text = "", fg = "#6F6E69" } # tx-2
 ]
