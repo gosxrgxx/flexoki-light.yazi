@@ -24,10 +24,6 @@
 [mgr]
 cwd = { fg = "#100F0F", bold = true } # tx
 
-# Hovered
-hovered = { bg = "#F2F0E5" } # bg-2
-preview_hovered = { underline = true }
-
 # Find
 find_keyword = { fg = "#D0A215", reversed = true } # ye-2
 find_position = { fg = "#B7B5AC", bold = true, italic = true } # tx-3
@@ -46,6 +42,12 @@ count_selected = { fg = "#24837B", bold = true, reversed = true } # cy
 # Border
 border_symbol = "│"
 border_style = { fg = "#E6E4D9" } # ui
+
+[indicator]
+parent = { underline = true }
+current = { bg = "#F2F0E5" } # bg-2
+preview = { underline = true }
+padding = { open = "█", close = "█" }
 
 [tabs]
 active = { fg = "#100F0F", bg = "#CECDC3", bold = true } # tx, ui-3
