@@ -98,7 +98,7 @@ separator_style = { }
 [confirm]
 border = { fg = "#CECDC3" } # ui-3
 title = { fg = "#B7B5AC", bold = true } # tx-3
-content = { fg = "#100F0F", bold = true } # tx
+body = { fg = "#100F0F", bold = true } # tx
 list = { fg = "#100F0F" } # tx
 btn_yes = { fg = "#100F0F", bg = "#CECDC3", bold = true } # tx, ui-3
 btn_no = { fg = "#6F6E69", bg = "#E6E4D9" } # tx-2, ui
